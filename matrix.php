@@ -11,14 +11,14 @@
         $movies = array(); // prendiamo tutti i film -> QUERY
 
         $conn = mysqli_connect($hostname, $username, $password, $database);
-        $query = "select * from user;";
+        $query = "SELECT * FROM user;";
         $result = mysqli_query($conn, $risultato);
         $row = msqli_fetch_assoc($result);
         while($row){
             $users[] = $row;
         }
 
-        $query = "select * from movie;";
+        $query = "SELECT * FROM movie;";
         $result = msqli_query($conn, $query);
         $row = msqli_fetch_assoc($result);
         while($row){
@@ -31,7 +31,7 @@
 
             $watched_movies = array();
 
-            $query = "select * from movie_user where user_id = " . $user['id'];
+            $query = "SELECT * FROM movie_user WHERE user_id = " . $user['id'];
             $result = mysqli_quey($conn, $query);
             $row = msqli_fetch_assoc($result);
             while($row){
